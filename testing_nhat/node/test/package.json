@@ -1,0 +1,21 @@
+{
+  "name": "door-control-mqtt",
+  "version": "1.0.0",
+  "description": "Node.js app điều khiển cửa ESP32 qua MQTT",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "mqtt",
+    "esp32",
+    "door-control"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mqtt": "^5.3.2"
+  }
+}

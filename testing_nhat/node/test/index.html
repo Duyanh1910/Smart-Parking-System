@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Door Controller</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .btn {
+      padding: 20px 50px;
+      font-size: 24px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.2s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      color: #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .open { background-color: #28a745; }
+    .close { background-color: #dc3545; }
+    .stop { background-color: #ffc107; color: #333; }
+
+    #status {
+      margin-top: 30px;
+      font-size: 22px;
+      padding: 15px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 10px;
+      display: inline-block;
+      min-width: 250px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Door Controller</h1>
+
+<button class="btn open" id="openBtn">Open Door</button>
+<button class="btn close" id="closeBtn">Close Door</button>
+<button class="btn stop" id="stopBtn">Stop Door</button>
+
+<p id="status">Status: Ready</p>
+
+<script>
+  const apiBase = "http://localhost:3000"; // Thay bằng IP PC nếu dùng điện thoại
+
+  async function sendCommand(endpoint) {
+    try {
+      const res = await fetch(`${apiBase}${endpoint}`);
+      const data = await res.json();
+      document.getElementById('status').innerText = data.message;
+      console.log(data);
+    } catch (err) {
+      document.getElementById('status').innerText = "Error sending command";
+      console.error(err);
+    }
+  }
+
+  document.getElementById('openBtn').addEventListener('click', () => sendCommand('/door/open'));
+  document.getElementById('closeBtn').addEventListener('click', () => sendCommand('/door/close'));
+  document.getElementById('stopBtn').addEventListener('click', () => sendCommand('/door/stop'));
+</script>
+
+</body>
+</html>

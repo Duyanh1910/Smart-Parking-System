@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "406841665431",
+    "project_id": "automatic-door-49483",
+    "storage_bucket": "automatic-door-49483.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406841665431:android:d978a9a4a70c166fdc06d2",
+        "android_client_info": {
+          "package_name": "com.example.smart_iot_parking_lot_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406841665431-c2qc924qn0618n7e31hfv67rv3o7ue0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqwADUMy_BUAZ2u8LpG3u7RnMrUTk-a8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406841665431-c2qc924qn0618n7e31hfv67rv3o7ue0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
